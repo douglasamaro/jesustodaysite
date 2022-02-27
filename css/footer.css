@@ -1,0 +1,43 @@
+footer {
+    width: 100%;
+    display: block;
+    height: 30vh;
+    background-color: #222;
+   
+}
+
+
+.collum1 {
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 13px;
+    display: flex;
+    color: white;
+    height: 15vh;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.collum1 a {
+    padding-top: 5vh;
+    text-decoration: none;
+    color: white;
+}
+
+.collum2 {
+    color: white;
+    position: relative;
+    height: 15vh;
+    width: 100%;
+}
+
+.collum2 p {
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 11px;
+    padding-bottom: 2vh;
+}
