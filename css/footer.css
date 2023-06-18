@@ -14,8 +14,8 @@ footer {
     display: flex;
     color: white;
     height: 15vh;
-    width: 60%;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .collum1 a {
