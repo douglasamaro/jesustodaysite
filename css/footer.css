@@ -8,14 +8,13 @@ footer {
 
 
 .collum1 {
-    margin-left: 10%;
-    margin-right: 10%;
     font-size: 13px;
     display: flex;
     color: white;
     height: 15vh;
     width: 80%;
     justify-content: space-between;
+    text-align: center;
 }
 
 .collum1 a {
