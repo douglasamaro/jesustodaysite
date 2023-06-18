@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 10px;
+    color: #2c3346;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.accountBody {
+    background-color: #F8FBFB;
+    max-width: 100%;
+    overflow-x: hidden;
+    align-content: center;
+    align-items: center;
+}
+
+.accountBody h1 {
+    font-size: 50px;
+    font-weight: 900;
+}
+
+.accountBody h2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.accountBody h3 {
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.accountBody p {
+    font-size: 20px;
+}
+
+.accountBody img {
+    height: 20vh;
+    width: auto;
+}
+
+@media screen and (max-width: 630px){
+    .accountBody h1 {
+        font-size: 20px;
+    }
+
+    .accountBody h2 {
+        font-size: 15px;
+    }
+
+    .accountBody h3 {
+        font-size: 15px;
+    }
+
+    .accountBody p {
+        font-size: 14px;
+    }
+
+    .accountBody img {
+        height: 20vh;
+    }
+}
