@@ -18,3 +18,6 @@ media.net, 8CUD06Z68, RESELLER
 pubmatic.com, 160113, RESELLER, 5d62403b186f2ace
 
 facebook.com, 156632900463970, DIRECT, c3e20eee3f780d68
+
+smartadserver.com, 4194-OB, RESELLER, 060d053dcf45cbf3
+smartadserver.com, 4194, RESELLER, 060d053dcf45cbf3
