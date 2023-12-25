@@ -29,3 +29,6 @@ facebook.com, 156632900463970, DIRECT, c3e20eee3f780d68
 
 smartadserver.com, 4194-OB, RESELLER, 060d053dcf45cbf3
 smartadserver.com, 4194, RESELLER, 060d053dcf45cbf3
+
+pangleglobal.com, Account ID, DIRECT
+pubmatic.com, 161490, RESELLER, 5d62403b186f2ace
