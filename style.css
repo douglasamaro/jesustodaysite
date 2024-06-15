@@ -1,8 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    margin-left: 24px;
-    margin-right: 24px;
     color: #2c3346;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
@@ -12,5 +10,7 @@ body {
     background-color: #CCD6E0;
     max-width: 100%;
     overflow-x: hidden;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
