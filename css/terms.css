@@ -15,14 +15,8 @@ body {
     header {
         border-bottom: 1px solid #E2DCD1;
     }
-    header h2 {
-        color: #E2DCD1;
-    }
     .date {
         color: #C8C8C8;
-    }
-    section h3 {
-        color: #E2DCD1;
     }
     footer {
         border-top: 1px solid #C8C8C8;
@@ -49,7 +43,6 @@ header h1 {
 header h2 {
     margin: 10px 0;
     font-size: 1.5em;
-    color: #A8A8A8;
 }
 
 .date {
@@ -63,7 +56,6 @@ section {
 
 section h3 {
     font-size: 1.2em;
-    color: #393E46;
     margin-bottom: 10px;
 }
 
