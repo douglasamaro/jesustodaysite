@@ -4,6 +4,7 @@ body {
     background-color: #F8FBFB;
     margin: 0;
     padding: 0;
+    color: #393E46;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -22,9 +23,6 @@ body {
     }
     section h3 {
         color: #E2DCD1;
-    }
-    .text-body {
-        color: #C8C8C8;
     }
     footer {
         border-top: 1px solid #C8C8C8;
@@ -72,10 +70,6 @@ section h3 {
 .ul {
     list-style: disc inside;
     padding-left: 20px;
-}
-
-.text-body {
-    color: #393E46;
 }
 
 footer {
