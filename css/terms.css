@@ -16,9 +16,6 @@ body {
     header {
         border-bottom: 1px solid #E2DCD1;
     }
-    .date {
-        color: #E2DCD1;
-    }
     footer {
         border-top: 1px solid #C8C8C8;
     }
@@ -47,7 +44,6 @@ header h2 {
 }
 
 .date {
-    color: #393E46;
     font-style: italic;
 }
 
