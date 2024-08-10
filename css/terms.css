@@ -4,6 +4,7 @@ body {
     background-color: #F8FBFB; /* designSystemLightThemePalette.backgroundColor */
     margin: 0;
     padding: 0;
+    text-align: justify;
 }
 
 .container {
@@ -32,6 +33,10 @@ header h2 {
 .date {
     color: #A8A8A8; /* designSystemLightThemePalette.textSecondary */
     font-style: italic;
+}
+
+.create-account {
+    text-align: left;
 }
 
 section {
