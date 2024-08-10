@@ -8,22 +8,6 @@ body {
     text-align: justify;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-    body {
-        background-color: #131515;
-    }
-    header {
-        border-bottom: 1px solid #E2DCD1;
-    }
-    footer {
-        border-top: 1px solid #C8C8C8;
-    }
-
-    .text-body {
-        color: #C8C8C8;
-    }
-}
-
 .container {
     max-width: 800px;
     margin: 20px auto;
@@ -77,4 +61,20 @@ footer {
 
 .footer p {
     margin: 5px 0;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-color: #131515;
+    }
+    header {
+        border-bottom: 1px solid #E2DCD1;
+    }
+    footer {
+        border-top: 1px solid #C8C8C8;
+    }
+
+    .text-body {
+        color: #C8C8C8;
+    }
 }
