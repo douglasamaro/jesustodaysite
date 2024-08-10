@@ -19,6 +19,10 @@ header {
     border-bottom: 1px solid #393E46; /* designSystemLightThemePalette.onSurfaceColor */
 }
 
+.title {
+    color: #393E46;
+}
+
 header h1 {
     margin: 0;
     font-size: 2.5em;
@@ -27,7 +31,7 @@ header h1 {
 header h2 {
     margin: 10px 0;
     font-size: 1.5em;
-    color: #A8A8A8; /* designSystemLightThemePalette.textSecondary */
+    color: #393E46; /* designSystemLightThemePalette.textSecondary */
 }
 
 .date {
@@ -91,6 +95,9 @@ footer p {
     }
     p {
         color: #C8C8C8; /* designSystemDarkThemePalette.textSecondary */
+    }
+    .title {
+        color: #E2DCD1;
     }
     ul li {
         color: #C8C8C8;
