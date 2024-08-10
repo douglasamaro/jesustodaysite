@@ -9,6 +9,7 @@ body {
 @media screen and (prefers-color-scheme: dark) {
     body {
         background-color: #131515;
+        color: #C8C8C8;
     }
     header {
         border-bottom: 1px solid #E2DCD1;
