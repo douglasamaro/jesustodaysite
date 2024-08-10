@@ -47,6 +47,10 @@ header h2 {
     font-style: italic;
 }
 
+.create-account {
+    text-align: left;
+}
+
 section {
     margin: 20px 0;
 }
