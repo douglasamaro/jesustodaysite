@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.amaro.jesustoday",
+      "sha256_cert_fingerprints": [
+        "94:94:3B:60:91:AD:2F:09:57:8F:92:01:8E:AF:C7:D4:6F:FF:C2:91:71:90:52:6D:7D:CB:C0:11:94:D6:C3:8B"
+      ]
+    }
+  }
+]
