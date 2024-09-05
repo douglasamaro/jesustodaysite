@@ -183,9 +183,8 @@
         font-size: 24px;
     }
 
-    .parceiro-card .parceiro-card-infos div p{
-        font-size: 12px;
-        color: var(--text-color);
+    .parceiro-card .parceiro-card-infos div a{
+        font-size: 14px;
     }
 
     .parceiro-card .parceiro-card-autoral p, h6{
