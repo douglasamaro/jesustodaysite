@@ -1,0 +1,608 @@
+/* HOME CSS*/
+
+.header__info{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 66px;
+    border-bottom: solid 1px var(--light-color);
+}
+
+
+
+:root[data-theme='dark'] .header__info .info__text svg path{
+    fill: #E2DCD1;
+}
+
+.header__info h1{
+    font-size: 64px;
+    font-weight: bold;
+    color: var(--title-color);
+}
+
+.header__info h1 span{
+    color: var(--primary-color);
+    line-height: 78px;
+}
+
+.header__info p{
+    padding-top: 10px;
+    font-size: 16px;
+    color: var(--title-color);
+    font-weight: 400;
+    padding-bottom: 20px;
+    line-height: 20px;
+}
+
+.header__info p span{
+    font-weight: bold;
+}
+
+.name-color{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.header__info .info__buttons{
+    margin-top: 10px;
+    
+}
+
+.baixar-agora{
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-bg-color);
+    text-decoration: none;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    margin-right: 30px;
+    border: 1px solid var(--primary-color);
+    transition: 200ms;
+}
+
+ .baixar-agora:hover{
+    scale: 1.2;
+}
+
+ .conheca-missao{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--title-color);
+    text-decoration: underline;
+    margin-right: 30px;
+    transition: 200ms;
+}
+
+.conheca-missao svg{
+    margin-left: 20px;
+}
+
+:root[data-theme='dark'] .conheca-missao svg path{
+    stroke: var(--white);
+}
+
+
+.objetivo-historia {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 30px 0px 50px 0px;
+}
+
+.objetivo-historia .objetivo-historia__item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.objetivo-historia .objetivo-historia__item h4{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.objetivo-historia .objetivo-historia__item p{
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+
+:root[data-theme='dark'] .objetivo-historia .objetivo-historia__item svg path{
+    stroke: var(--white);
+}
+
+.benefits{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    border-bottom: solid 1px var(--light-color);
+    flex: 1;
+}
+
+.benefits h3 {
+    color: var(--title-color);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.benefits p{
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--title-color);
+    font-size: 16px;
+}
+
+.benefits-cards{
+    display: flex;
+    gap: 20px;
+}
+
+.benefit-card{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--primary-bg-color);
+    border-radius: 20px;
+    row-gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    flex: 1;
+    filter: drop-shadow(0px 4px 5px rgba(2,2,2,0.2));
+}
+
+.benefit-card svg{
+    width: 40px;
+}
+
+:root[data-theme='dark'] .benefit-card rect {
+    fill: var(--primary-color);
+    
+}
+
+:root[data-theme='dark'] .benefit-card path {
+    fill: #1E1E1E;
+    stroke: #1E1E1E;
+}
+
+:root[data-theme='dark'] .benefit-card:nth-child(2) path {
+    fill: #1E1E1E;
+    stroke: var(--primary-color);
+}
+
+.benefit-card h4{
+    font-size: 24px;
+    font-weight: 600px;
+    color: var(--title-color);
+}
+
+.benefit-card p {
+    font-size: 16px;
+    color: var(--text-color);
+    text-align:left;
+    line-height: 20px;
+}
+
+.future{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.future-wrapper{
+    display: flex;
+    padding: 40px 0px;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: solid 1px var(--light-color);
+}
+
+.future .img-position {
+    position: absolute;
+    top: -20%;
+    right: 0;
+    z-index: -1;
+}
+
+:root[data-theme='dark'] .future .img-position, :root[data-theme='dark'] .future .img-position-2, :root[data-theme='dark'] footer .img-position-3{
+    opacity: .2;
+}
+
+.future .img-position-2{
+    position: absolute;
+    bottom: -63%;
+    left: 0%;
+    z-index: -1;
+}
+ 
+.future-wrapper .future_text h3{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--title-color);
+    margin-bottom: 10px;
+}
+
+.future-wrapper .future_text h3 span{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.future-wrapper .future_text p{
+    color: var(--text-color);
+    line-height: 20px;
+}
+
+
+.future-wrapper .info__buttons{
+    margin-top: 30px;
+}
+
+.future .future_image{
+    width: 50%;
+    text-align: center;
+}
+
+.download{
+    width: 100%;
+    padding: 70px 60px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.download_text{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.download_text h5{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.download_text h3{
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.download_text p{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.download_text p span{
+    font-weight: bold;
+    color: var(--title-color);
+}
+
+.download_text .baixar-agora{
+    padding: 10px 80px;
+    width: fit-content;
+}
+
+.testimonial{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 60px 0px 80px 0px;
+}
+
+.testimonial h3{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.testimonial .testimonial-button{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial .testimonial-button p{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.testimonial .testimonial-button .baixar-agora{
+    padding: 10px 80px;
+    width: fit-content;
+}
+
+.testimonial-cards{
+    display: flex;
+    gap: 20px;
+}
+
+
+.testimonial-card{
+    padding: 20px 0px 20px 20px;
+    border: solid 1px var(--border-card-color);
+    border-radius: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.testimonial-card .testimonial-people-infos{
+    display: flex;
+    gap: 15px;
+}
+
+.testimonial-card .testimonial-people-infos p{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.testimonial-card .testimonial-people-infos .testimonial-people-rate i{
+    font-size: 19px;
+    color: #FFDA16;
+}
+
+.testimonial-card p{
+    font-size: 16px;
+    color: var(--title-color);
+}
+
+.testimonial-card span{
+    color: var(--text-color);
+}
+
+@media (max-width: 768px){
+
+/* HOME CSS*/
+
+.objetivo-historia{
+    flex-direction: column;
+}
+
+.header__info{
+    padding: 20px 0px;
+}
+
+.header__info img{
+    position: absolute;
+    right: 20px;
+    width: 164px;
+    height: 124px;
+}
+
+.header__info h1{
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.header__info h1 span{
+    line-height: 29px;
+}
+
+.header__info h1 svg{
+    width: 22px;
+    height: auto;
+}
+
+.header__info .info__buttons{
+    margin-top: 0px;
+}
+
+.header__info .info__buttons .baixar-agora{
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+
+.header__info .info__buttons .conheca-missao{
+    font-size: 12px;
+}
+
+.header__info .info__buttons .conheca-missao svg{
+    margin-left: 10px;
+}
+
+.benefits{
+    padding-bottom: 20px;
+}
+
+.benefits-cards{
+    flex-direction: column;
+    gap: 0px;
+}
+
+.benefits .baixar-agora{
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 0px;
+    margin-top: 20px;
+}
+
+.benefit-card{
+    margin-bottom: 0px;
+}
+
+.future .img-position {
+    width: 28%;
+    top: inherit;
+    bottom: -2%;
+    right: -9%;
+    overflow: hidden;
+}
+
+.future .img-position-2 {
+    position: absolute;
+    bottom: inherit;
+    left: 0%;
+    z-index: -1;
+    width: 30%;
+    top: 0;
+    overflow: hidden;
+}
+
+.future-wrapper .future_text h3{
+    text-align: center;
+    font-size: 16px;
+}
+
+.future-wrapper .future_text{
+    text-align: center;
+}
+
+.future-wrapper .info__buttons{
+    justify-content: center;
+}
+
+.future-wrapper .info__buttons .baixar-agora{
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+
+.future-wrapper .info__buttons .conheca-missao{
+    font-size: 12px;
+    margin-right: 0px;
+}
+
+.future-wrapper .info__buttons .conheca-missao svg{
+    margin-left: 10px;
+}
+
+.download{
+    gap: 15px;
+    padding: 20px;
+}
+
+.download img{
+    width: 103px;
+}
+
+.download_text h3{
+    font-size: 16px;
+}
+
+.download_text p{
+    font-size: 15px;
+    text-align: justify;
+}
+
+.download_button {
+    width: calc(100% - 40px);
+    text-align: center;
+}
+
+.download_button .baixar-agora{
+    font-size: 12px;
+    margin-right: 0;
+}
+
+.testimonial-mobile {
+    padding: 33px 0px;
+    gap: 20px;
+    flex: 1;
+}
+
+.testimonial-mobile h3{
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--title-color);
+}
+
+.testimonial-mobile .swiper-wrapper{
+    margin-bottom: 20px;
+}
+
+.testimonial-mobile .swiper-wrapper .testimonial-card{
+    min-height: 246px;
+}
+
+.testimonial-mobile .testimonial-info{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.testimonial-mobile .testimonial-info p{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--title-color);
+}
+.testimonial-mobile .testimonial-button{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-button .baixar-agora{
+    font-size: 12px;
+    text-align: center;
+    margin-right: 0px;
+    padding: 10px 110px;
+}
+
+
+
+.testimonial-mobile .testimonial-info .testimonial-controlers{
+    display: flex;
+    height: fit-content;
+    gap: 20px;
+}
+
+.swiper-button-next, .swiper-button-prev{
+    position: unset;
+    top: unset;
+    width:unset;
+    height:unset;
+    z-index: 0;
+    flex: 1;
+    margin-top: 0px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    /* top: var(--swiper-navigation-top-offset, 50%); */
+    /* width: calc(var(--swiper-navigation-size) / 44* 27); */
+    /* height: var(--swiper-navigation-size); */
+    /* margin-top: calc(0px -(var(--swiper-navigation-size) / 2)); */
+    /* z-index: 10; */
+    /* cursor: pointer; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* color: var(--swiper-navigation-color, var(--swiper-theme-color)); */
+}
+
+.swiper-button-next::after{
+    content: url(/images/arrow-next-light.svg);
+    font-size: unset;
+}
+
+:root[data-theme='dark'] .swiper-button-next::after{
+    content: url(/images/arrow-next-dark.svg);
+    font-size: unset;
+}
+
+.swiper-button-prev::after{
+    content: url(/images/arrow-previous-light.svg);
+    font-size: unset;
+}
+
+:root[data-theme='dark'] .swiper-button-prev::after{
+    content: url(/images/arrow-previous-dark.svg);
+    font-size: unset;
+}
+
+
+}
