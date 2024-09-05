@@ -1,0 +1,197 @@
+/* PARCEIROS CSS*/
+.parceiros-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0px;
+    gap: 20px;
+}
+.parceiros-header .parceiros-header-titles{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.parceiros-header .parceiros-header-titles h5{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.parceiros-header .parceiros-header-titles h2{
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.parceiros-header p {
+    color: var(--text-color);
+    line-height: 30px;
+}
+
+.parceiros-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.parceiros-cards-row{
+    display: flex;
+    gap: 20px;
+}
+
+.parceiro-card{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    background-color: var(--primary-bg-color);
+    border-radius: 20px;
+    gap: 10px;
+}
+
+.parceiro-card .parceiro-card-infos{
+    display: flex;
+    gap: 20px;
+}
+
+.parceiro-card .parceiro-card-infos img{
+    max-height: 103px;
+}
+
+
+.parceiro-card .parceiro-card-infos div{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.parceiro-card .parceiro-card-infos div h4{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.parceiro-card .parceiro-card-infos div .title-small{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.parceiro-card .parceiro-card-infos div p{
+    font-size: 13px;
+    color: var(--text-color);
+}
+
+.parceiro-card .parceiro-card-infos div a{
+    color: var(--bg-primary-color);
+    background-color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    max-width: fit-content;
+    font-weight: bold;
+}
+
+.parceiro-card .parceiro-card-infos div a svg{
+    margin-left: 10px;
+}
+
+:root[data-theme='dark'] .parceiro-card .parceiro-card-infos div a svg path{
+    stroke: var(--bg-primary-color);
+}
+
+.parceiro-card .parceiro-card-text p{
+    font-size: 13px;
+    color: var(--title-color);
+}
+
+.parceiro-card .parceiro-card-autoral p{
+    color: var(--text-color);
+}
+
+.parceiro-card .parceiro-card-autoral h6{
+    color: var(--title-color);
+}
+
+.parceiro-card .parceiro-card-autoral p, h6{
+    font-size: 12px;
+}
+
+.parceiros-impacto{
+    width: 100%;
+    padding: 30px 0px 80px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.parceiros-impacto h2{
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--title-color);
+}
+
+.parceiros-impacto p{
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 30px;
+}
+
+.parceiros-impacto a {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.parceiros-impacto a svg{
+    margin-left: 20px;
+}
+
+:root[data-theme='dark'] .parceiros-impacto a span svg path{
+    stroke: var(--primary-color);
+}
+
+
+
+@media (max-width: 768px){
+
+    /*PARCEIROS CSS*/
+
+    .parceiros-header{
+        padding: 60px 0px;
+    }
+
+    .parceiros-header .parceiros-header-titles h5{
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .parceiros-header .parceiros-header-titles h2{
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .parceiros-cards-row{
+        flex-direction: column;
+    }
+
+    .parceiro-card .parceiro-card-text p{
+        font-size: 16px;
+    }
+
+    .parceiro-card .parceiro-card-infos div .title-small{
+        font-size: 24px;
+    }
+
+    .parceiro-card .parceiro-card-autoral p, h6{
+        font-size: 16px;
+    }
+    .parceiros-impacto{
+        padding: 40px 0px 80px 0px;
+    }
+    
+    .parceiros-impacto h2{
+        font-size: 20px;
+    }
+
+}

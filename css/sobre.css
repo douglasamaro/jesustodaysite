@@ -1,0 +1,161 @@
+/* SOBRE CSS*/
+
+.sobre-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px 60px 0px;
+}
+
+.sobre-header h5{
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.sobre-header-text{
+    margin-top: 60px;
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    width: 100%;
+    gap: 150px;
+}
+
+.sobre-header-text h2{
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+    color: var(--title-color);
+}
+
+.sobre-header-text p{
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.sobre-image img{
+    width: 100%;
+}
+
+.sobre-mission-history-compromisse{
+    width: 100%;
+    padding: 60px 0px;
+}
+
+.sobre-mission, .sobre-history, .sobre-compromisse{
+    display: flex;
+    gap: 120px;
+    padding: 40px 0px;
+}
+
+.sobre-mission h2, .sobre-history h2, .sobre-compromisse h2{
+    font-size: 48px;
+    line-height: 60px;
+    color: var(--title-color);
+    width: 42%;
+}
+
+.sobre-mission p, .sobre-history p, .sobre-compromisse p{
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 20px;
+}
+
+.sobre-mission{
+    border-top: solid 1px var(--light-color);
+    border-bottom: solid 1px var(--light-color);
+}
+
+.sobre-history{
+    border-bottom: solid 1px var(--light-color);
+}
+
+.sobre-compromisse{
+    border-bottom: solid 1px var(--light-color);
+}
+
+.future-philosophy{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 80px;
+}
+
+.future-philosophy .text{
+    margin-top: 40px;
+    display: flex;
+    gap: 230px;
+}
+
+.future-philosophy .text{
+    text-align: center;
+}
+
+.future-philosophy .text .text-item h2{
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 600;
+    color: var(--title-color);
+    margin-bottom: 20px;
+}
+
+.future-philosophy .text .text-item p{
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+@media (max-width: 768px){
+
+    /* SOBRE CSS*/
+
+    .sobre-header{
+        padding: 40px 0px;
+    }
+    .sobre-header-text{
+        margin-top: 20px;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .sobre-header-text h2{
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .sobre-mission-history-compromisse{
+        padding: 40px 0px 20px 0px;
+    }
+
+    .sobre-mission, .sobre-history, .sobre-compromisse{
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0px;
+    }
+
+    .sobre-mission h2, .sobre-history h2, .sobre-compromisse h2{
+        font-size: 24px;
+        line-height: 29px;
+        width: 100%;
+    }
+
+    .future-philosophy img{
+        width: 110px;
+    }
+
+    .future-philosophy .text{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .future-philosophy .text .text-item h2{
+        font-size: 24px;
+        margin-bottom: 15px;
+        line-height: 29px;
+    }
+}
