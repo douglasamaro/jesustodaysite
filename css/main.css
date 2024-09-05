@@ -188,7 +188,7 @@ footer .img-position-3{
     width: 300px;
     font-size: 16px;
     background-color: var(--bg-primary-color);
-
+    color: var(--title-color);
 }
 
 .newsletter input[type="email"]:focus {
