@@ -398,7 +398,7 @@
 }
 
 .header__info .info__buttons .baixar-agora{
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px 10px;
     margin-right: 20px;
 }
@@ -422,7 +422,7 @@
 
 .benefits .baixar-agora{
     width: 100%;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     margin-right: 0px;
     margin-top: 20px;
@@ -464,7 +464,7 @@
 }
 
 .future-wrapper .info__buttons .baixar-agora{
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px 10px;
     margin-right: 20px;
 }
