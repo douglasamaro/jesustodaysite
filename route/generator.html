@@ -51,7 +51,8 @@
     // Gera o link encriptado
     function generateEncryptedLink(screen, route, params) {
         const data = { screen, route, ...params };
-        return `https://jesustodayapp.com/route/${encodeBase64(data)}`;
+        const encryptedData = encodeBase64(data);
+        return `https://jesustodayapp.com/route?data=${encryptedData}`;
     }
 
     // Lógica do formulário

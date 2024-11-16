@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionando...</title>
     <script>
+        // Função para obter os parâmetros da URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
         // Função para decodificar a URL encriptada
         function decodeEncryptedData(encryptedData) {
             try {
@@ -25,13 +31,12 @@
                 .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
                 .join('&');
 
-            return `https://www.jesustodayapp.com/route/home?route=${screen}/${route}${paramStr ? `%2F${paramStr}` : ''}`;
+            return `https://www.jesustodayapp.com/app/home?route=${screen}/${route}${paramStr ? `%2F${paramStr}` : ''}`;
         }
 
         // Redirecionar o usuário
         function redirectToApp() {
-            const path = window.location.pathname; // Pega o path completo
-            const encryptedData = path.split("/route/")[1]; // Captura a parte encriptada
+            const encryptedData = getQueryParam("data"); // Captura o parâmetro "data"
 
             if (!encryptedData) {
                 console.error("Nenhum dado encriptado encontrado.");
