@@ -31,7 +31,7 @@
             // Constrói os valores dos parâmetros na ordem correta
             const values = Object.values(params).map(value => encodeURIComponent(value)).join('%2F');
 
-            return `https://www.jesustodayapp.com/app/home?route=${screen}%2F${route}%2F${values}`;
+            return `https://www.jesustodayapp.com/app/home?route=${screen}/${route}%2F${values}`;
         }
 
         // Redirecionar o usuário
