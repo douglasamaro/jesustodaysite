@@ -1,52 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script>
+    <title>Gerar Link Encriptado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 600px;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-<h1>Gerador de URL</h1>
-<form id="form">
-    <label for="dataInput">Digite o dado para encriptar:</label>
-    <input type="text" id="dataInput" required>
-    <button type="submit">Gerar URL</button>
+<h1>Gerar Link Encriptado</h1>
+<form id="generatorForm">
+    <label for="screen">Screen:</label>
+    <input type="text" id="screen" placeholder="Ex: bible_feature_screen" required />
+
+    <label for="route">Route:</label>
+    <input type="text" id="route" placeholder="Ex: readerRoute" required />
+
+    <button type="button" id="generateBtn">Gerar URL</button>
 </form>
 
-<h2>URL Gerada:</h2>
-<input type="text" id="generatedUrl" readonly style="width: 100%; margin-top: 10px;">
-<button id="copyButton" style="margin-top: 10px;">Copiar URL</button>
+<h2>Link Gerado:</h2>
+<textarea id="result" readonly></textarea>
+<button id="copyBtn">Copiar para Área de Transferência</button>
 
 <script>
-    // Função para gerar a URL com dado encriptado
-    document.getElementById('form').addEventListener('submit', function(event) {
-        event.preventDefault();
+    // Função para codificar em Base64 com os caracteres reservados intactos
+    function encodeBase64(data) {
+        return btoa(JSON.stringify(data));
+    }
 
-        // Obter o dado inserido
-        const data = document.getElementById('dataInput').value;
+    // Gera o link encriptado
+    function generateEncryptedLink(screen, route, params) {
+        const data = { screen, route, ...params };
+        const encryptedData = encodeBase64(data);
+        return `https://jesustodayapp.com/route?data=${encryptedData}`;
+    }
 
-        // Encriptar o dado
-        const encryptedData = CryptoJS.AES.encrypt(data, 'secret-key').toString();
-
-        // Criar a URL com o dado encriptado
-        const url = `https://jesustodayapp.com/route?data=${encryptedData}`;
-
-        // Exibir a URL gerada no campo de texto
-        document.getElementById('generatedUrl').value = url;
+    // Lógica do formulário
+    document.getElementById('generateBtn').addEventListener('click', () => {
+        const route = document.getElementById('route').value.trim();
+        const encryptedLink = generateEncryptedLink(route);
+        document.getElementById('result').value = encryptedLink;
     });
 
-    // Função para copiar a URL para a área de transferência
-    document.getElementById('copyButton').addEventListener('click', function() {
-        const urlField = document.getElementById('generatedUrl');
-
-        // Seleciona o texto do campo de entrada
-        urlField.select();
-        urlField.setSelectionRange(0, 99999); // Para dispositivos móveis
-
-        // Copia o texto para a área de transferência
+    // Copia o link gerado
+    document.getElementById('copyBtn').addEventListener('click', () => {
+        const result = document.getElementById('result');
+        result.select();
         document.execCommand('copy');
-        alert('URL copiada para a área de transferência!');
+        alert('Link copiado!');
     });
 </script>
 </body>

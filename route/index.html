@@ -1,35 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script>
+    <title>Redirecionando...</title>
+    <script>
+        // Função para obter os parâmetros da URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Função para decodificar a URL encriptada
+        function decodeEncryptedData(encryptedData) {
+            try {
+                const jsonString = atob(encryptedData); // Decodifica Base64
+                return JSON.parse(jsonString); // Converte para objeto JSON
+            } catch (error) {
+                console.error("Erro ao decodificar os dados:", error);
+                return null;
+            }
+        }
+
+        // Reconstruir a URL normal com os valores dos parâmetros na ordem correta
+        function buildNormalURL(data) {
+            if (!data) return null;
+
+            const { route } = data;
+
+            // Se houver uma segunda rota, inclui-a na URL
+            let normalURL = `https://www.jesustodayapp.com/app/home?route=${route}`;
+
+            return normalURL;
+        }
+
+        // Redirecionar o usuário
+        function redirectToApp() {
+            const encryptedData = getQueryParam("data"); // Captura o parâmetro "data"
+
+            if (!encryptedData) {
+                console.error("Nenhum dado encriptado encontrado.");
+                return;
+            }
+
+            const data = decodeEncryptedData(encryptedData); // Decodifica os dados
+            const normalURL = buildNormalURL(data); // Constrói a URL normal
+
+            if (normalURL) {
+                window.location.href = normalURL; // Redireciona para o aplicativo
+            } else {
+                console.error("Erro ao construir a URL.");
+            }
+        }
+
+        // Executa o redirecionamento ao carregar a página
+        window.onload = redirectToApp;
+    </script>
 </head>
 <body>
-<h1>Desencriptar e Redirecionar</h1>
-
-<script>
-    // Função para desencriptar o dado e redirecionar
-    window.onload = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const encryptedData = urlParams.get('data');
-
-        if (encryptedData) {
-            // Desencriptar o dado
-            const bytes = CryptoJS.AES.decrypt(encryptedData, 'secret-key');
-            const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
-
-            if (decryptedData) {
-                // Redirecionar para a URL com o dado desencriptado
-                window.location.href = `https://www.jesustodayapp.com/app/home?${decryptedData}`;
-            } else {
-                alert('Falha ao desencriptar os dados!');
-            }
-        } else {
-            alert('Nenhum parâmetro de dado encontrado!');
-        }
-    };
-</script>
+<h1>Redirecionando...</h1>
+<p>Aguarde enquanto você é redirecionado.</p>
 </body>
 </html>
