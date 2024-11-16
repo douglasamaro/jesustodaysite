@@ -22,14 +22,16 @@
             }
         }
 
-        // Reconstruir a URL comum
+        // Reconstruir a URL comum, preservando `%2F`
         function buildNormalURL(data) {
             if (!data) return null;
 
             const { screen, route, ...params } = data;
+
+            // Constrói os parâmetros preservando `%2F`
             const paramStr = Object.entries(params)
-                .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-                .join('&');
+                .map(([key, value]) => `${key}=${encodeURIComponent(value).replace(/%2F/g, '%252F')}`)
+                .join('%2F');
 
             return `https://www.jesustodayapp.com/app/home?route=${screen}/${route}${paramStr ? `%2F${paramStr}` : ''}`;
         }
@@ -58,6 +60,6 @@
     </script>
 </head>
 <body>
-<h1>Redirecionando para o aplicativo...</h1>
+<h1>Redirecionando...</h1>
 </body>
 </html>
