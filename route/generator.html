@@ -26,9 +26,6 @@
 <body>
 <h1>Gerar Link Encriptado</h1>
 <form id="generatorForm">
-    <label for="screen">Screen:</label>
-    <input type="text" id="screen" placeholder="Ex: bible_feature_screen" required />
-
     <label for="route">Route:</label>
     <input type="text" id="route" placeholder="Ex: readerRoute" required />
 
@@ -46,8 +43,8 @@
     }
 
     // Gera o link encriptado
-    function generateEncryptedLink(screen, route, params) {
-        const data = { screen, route, ...params };
+    function generateEncryptedLink(route) {
+        const data = { route };
         const encryptedData = encodeBase64(data);
         return `https://jesustodayapp.com/route?data=${encryptedData}`;
     }
