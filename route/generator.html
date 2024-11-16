@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Link Encriptado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 600px;
+        }
+        input, button {
+            margin: 5px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Gerar Link Encriptado</h1>
+<form id="generatorForm">
+    <label for="screen">Screen:</label>
+    <input type="text" id="screen" placeholder="Ex: bible_feature_screen" required />
+
+    <label for="route">Route:</label>
+    <input type="text" id="route" placeholder="Ex: readerRoute" required />
+
+    <label for="params">Parâmetros (JSON):</label>
+    <textarea id="params" placeholder='Ex: {"bookId":"123","chapterId":"4","verseId":"7"}'></textarea>
+
+    <button type="button" id="generateBtn">Gerar URL</button>
+</form>
+
+<h2>Link Gerado:</h2>
+<textarea id="result" readonly></textarea>
+<button id="copyBtn">Copiar para Área de Transferência</button>
+
+<script>
+    // Função para codificar em Base64
+    function encodeBase64(data) {
+        return btoa(JSON.stringify(data));
+    }
+
+    // Gera o link encriptado
+    function generateEncryptedLink(screen, route, params) {
+        const data = { screen, route, ...params };
+        return `https://jesustodayapp.com/route/${encodeBase64(data)}`;
+    }
+
+    // Lógica do formulário
+    document.getElementById('generateBtn').addEventListener('click', () => {
+        const screen = document.getElementById('screen').value.trim();
+        const route = document.getElementById('route').value.trim();
+        const paramsText = document.getElementById('params').value.trim();
+        let params;
+
+        // Valida e converte os parâmetros JSON
+        try {
+            params = paramsText ? JSON.parse(paramsText) : {};
+        } catch (e) {
+            alert("Parâmetros JSON inválidos.");
+            return;
+        }
+
+        // Gera o link e exibe
+        const encryptedLink = generateEncryptedLink(screen, route, params);
+        document.getElementById('result').value = encryptedLink;
+    });
+
+    // Copia o link gerado
+    document.getElementById('copyBtn').addEventListener('click', () => {
+        const result = document.getElementById('result');
+        result.select();
+        document.execCommand('copy');
+        alert('Link copiado!');
+    });
+</script>
+</body>
+</html>
