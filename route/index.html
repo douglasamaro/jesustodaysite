@@ -22,29 +22,17 @@
             }
         }
 
-        // Reconstruir a URL comum sem barras
+        // Reconstruir a URL normal com os valores dos parâmetros na ordem correta
         function buildNormalURL(data) {
             if (!data) return null;
 
             const { screen, route, ...params } = data;
 
-            // Constrói os parâmetros em um formato linear
-            const paramStr = Object.entries(params)
-                .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-                .join('%2F');
+            // Constrói os valores dos parâmetros na ordem correta
+            const values = Object.values(params).map(value => encodeURIComponent(value)).join('%2F');
 
-            const url = `https://www.jesustodayapp.com/app/home?route=${screen}/${route}${paramStr ? `&${paramStr}` : ''}`;
-
-            // Copia o URL gerado para a área de transferência
-            navigator.clipboard.writeText(url).then(() => {
-                console.log('URL copiado para a área de transferência!');
-            }).catch(err => {
-                console.error('Erro ao copiar o URL: ', err);
-            });
-
-            return url;
+            return `https://www.jesustodayapp.com/app/home?route=${screen}%2F${route}%2F${values}`;
         }
-
 
         // Redirecionar o usuário
         function redirectToApp() {
