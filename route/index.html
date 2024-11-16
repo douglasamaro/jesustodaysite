@@ -5,55 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionando...</title>
     <script>
-        // Função para obter os parâmetros da URL
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
 
-        // Função para decodificar a URL encriptada
         function decodeEncryptedData(encryptedData) {
             try {
-                const jsonString = atob(encryptedData); // Decodifica Base64
-                return JSON.parse(jsonString); // Converte para objeto JSON
+                const jsonString = atob(encryptedData);
+                return JSON.parse(jsonString);
             } catch (error) {
                 console.error("Erro ao decodificar os dados:", error);
                 return null;
             }
         }
 
-        // Reconstruir a URL normal com os valores dos parâmetros na ordem correta
         function buildNormalURL(data) {
             if (!data) return null;
 
             const { route } = data;
 
-            // Se houver uma segunda rota, inclui-a na URL
-            let normalURL = `https://www.jesustodayapp.com/app/home?route=${route}`;
-
-            return normalURL;
+            return `https://www.jesustodayapp.com/app/home?route=${route}`;
         }
 
-        // Redirecionar o usuário
         function redirectToApp() {
-            const encryptedData = getQueryParam("data"); // Captura o parâmetro "data"
+            const encryptedData = getQueryParam("data");
 
             if (!encryptedData) {
                 console.error("Nenhum dado encriptado encontrado.");
                 return;
             }
 
-            const data = decodeEncryptedData(encryptedData); // Decodifica os dados
-            const normalURL = buildNormalURL(data); // Constrói a URL normal
+            const data = decodeEncryptedData(encryptedData);
+            const normalURL = buildNormalURL(data);
 
             if (normalURL) {
-                window.location.href = normalURL; // Redireciona para o aplicativo
+                window.location.href = normalURL;
             } else {
                 console.error("Erro ao construir a URL.");
             }
         }
 
-        // Executa o redirecionamento ao carregar a página
         window.onload = redirectToApp;
     </script>
 </head>

@@ -1,0 +1,84 @@
+/* Estilos específicos para o formulário */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-primary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    background-color: var(--primary-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--title-color);
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+img.logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+input, button, textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid var(--border-card-color);
+    width: 100%;
+}
+
+input, textarea {
+    font-size: 1rem;
+    color: var(--title-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-color);
+    opacity: 0.9;
+}
+
+h2 {
+    color: var(--title-color);
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: var(--footer-text-color);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+}

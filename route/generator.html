@@ -4,65 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerar Link Encriptado</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            max-width: 600px;
-        }
-        input, button {
-            margin: 5px 0;
-            padding: 10px;
-            width: 100%;
-        }
-        textarea {
-            width: 100%;
-            height: 100px;
-            margin: 10px 0;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
-<h1>Gerar Link Encriptado</h1>
-<form id="generatorForm">
-    <label for="route">Route:</label>
-    <input type="text" id="route" placeholder="Ex: readerRoute" required />
 
-    <button type="button" id="generateBtn">Gerar URL</button>
-</form>
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span id="closeBtn" class="close">&times;</span>
+        <h1>Proteger o Acesso</h1>
+        <form id="loginForm">
+            <label for="password">Digite a senha:</label>
+            <input type="password" id="password" placeholder="Digite a senha" required />
+            <button type="button" id="loginBtn">Entrar</button>
+        </form>
+    </div>
+</div>
 
-<h2>Link Gerado:</h2>
-<textarea id="result" readonly></textarea>
-<button id="copyBtn">Copiar para Área de Transferência</button>
+<div id="formSection" style="display: none;", align="center">
+    <img src="../images/jesustoday-logo-large-light.png" alt="Logo Jesus Today" class="logo">
+    <h1>Gerar Link Encriptado</h1>
+    <form id="generatorForm">
+        <label for="route">Route:</label>
+        <input type="text" id="route" placeholder="Ex: readerRoute" required />
+        <button type="button" id="generateBtn">Gerar URL</button>
+    </form>
+
+    <h2>Link Gerado:</h2>
+    <label for="result"></label><textarea id="result" readonly></textarea>
+    <button id="copyBtn">Copiar para Área de Transferência</button>
+</div>
 
 <script>
-    // Função para codificar em Base64 com os caracteres reservados intactos
+    const correctPassword = '612416';
+
+    function checkPassword() {
+        const password = document.getElementById('password').value;
+        if (password === correctPassword) {
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('formSection').style.display = 'block';
+        } else {
+            alert('Senha incorreta. Tente novamente.');
+        }
+    }
+
+    document.getElementById('loginBtn').addEventListener('click', checkPassword);
+
+    document.getElementById('closeBtn').addEventListener('click', () => {
+        document.getElementById('loginModal').style.display = 'none';
+    });
+
     function encodeBase64(data) {
         return btoa(JSON.stringify(data));
     }
 
-    // Gera o link encriptado
     function generateEncryptedLink(route) {
         const data = { route };
         const encryptedData = encodeBase64(data);
         return `https://jesustodayapp.com/route?data=${encryptedData}`;
     }
 
-    // Lógica do formulário
     document.getElementById('generateBtn').addEventListener('click', () => {
         const route = document.getElementById('route').value.trim();
-        const encryptedLink = generateEncryptedLink(route);
-        document.getElementById('result').value = encryptedLink;
+        document.getElementById('result').value = generateEncryptedLink(route);
     });
 
-    // Copia o link gerado
     document.getElementById('copyBtn').addEventListener('click', () => {
         const result = document.getElementById('result');
         result.select();
         document.execCommand('copy');
         alert('Link copiado!');
     });
+
+    window.onload = () => {
+        document.getElementById('loginModal').style.display = 'block';
+    };
 </script>
 </body>
 </html>
