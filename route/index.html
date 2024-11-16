@@ -31,7 +31,7 @@
             // Constrói os parâmetros em um formato linear
             const paramStr = Object.entries(params)
                 .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-                .join('&');
+                .join('%2F');
 
             return `https://www.jesustodayapp.com/app/home?route=${screen}&subroute=${route}${paramStr ? `&${paramStr}` : ''}`;
         }
