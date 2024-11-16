@@ -22,18 +22,18 @@
             }
         }
 
-        // Reconstruir a URL comum, preservando `%2F`
+        // Reconstruir a URL comum sem barras
         function buildNormalURL(data) {
             if (!data) return null;
 
             const { screen, route, ...params } = data;
 
-            // Constrói os parâmetros preservando `%2F`
+            // Constrói os parâmetros em um formato linear
             const paramStr = Object.entries(params)
-                .map(([key, value]) => `${key}=${encodeURIComponent(value).replace(/%2F/g, '%252F')}`)
-                .join('%2F');
+                .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+                .join('&');
 
-            return `https://www.jesustodayapp.com/app/home?route=${screen}/${route}${paramStr ? `%2F${paramStr}` : ''}`;
+            return `https://www.jesustodayapp.com/app/home?route=${screen}&subroute=${route}${paramStr ? `&${paramStr}` : ''}`;
         }
 
         // Redirecionar o usuário
@@ -46,20 +46,21 @@
             }
 
             const data = decodeEncryptedData(encryptedData); // Decodifica os dados
-            const normalURL = buildNormalURL(data); // Reconstrói a URL normal
+            const normalURL = buildNormalURL(data); // Constrói a URL normal
 
             if (normalURL) {
-                window.location.href = normalURL; // Redireciona para a URL normal
+                window.location.href = normalURL; // Redireciona para o aplicativo
             } else {
-                console.error("Falha ao construir a URL normal.");
+                console.error("Erro ao construir a URL.");
             }
         }
 
-        // Executa a lógica ao carregar a página
+        // Executa o redirecionamento ao carregar a página
         window.onload = redirectToApp;
     </script>
 </head>
 <body>
 <h1>Redirecionando...</h1>
+<p>Aguarde enquanto você é redirecionado.</p>
 </body>
 </html>
