@@ -33,8 +33,18 @@
                 .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
                 .join('%2F');
 
-            return `https://www.jesustodayapp.com/app/home?route=${screen}/${route}${paramStr ? `&${paramStr}` : ''}`;
+            const url = `https://www.jesustodayapp.com/app/home?route=${screen}/${route}${paramStr ? `&${paramStr}` : ''}`;
+
+            // Copia o URL gerado para a área de transferência
+            navigator.clipboard.writeText(url).then(() => {
+                console.log('URL copiado para a área de transferência!');
+            }).catch(err => {
+                console.error('Erro ao copiar o URL: ', err);
+            });
+
+            return url;
         }
+
 
         // Redirecionar o usuário
         function redirectToApp() {
