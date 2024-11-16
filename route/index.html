@@ -26,12 +26,19 @@
         function buildNormalURL(data) {
             if (!data) return null;
 
-            const { screen, route, ...params } = data;
+            const { screen, route, secondaryRoute, ...params } = data;
 
             // Constrói os valores dos parâmetros na ordem correta
             const values = Object.values(params).map(value => encodeURIComponent(value)).join('%2F');
 
-            return `https://www.jesustodayapp.com/app/home?route=${screen}/${route}%2F${values}`;
+            // Se houver uma segunda rota, inclui-a na URL
+            let normalURL = `https://www.jesustodayapp.com/app/home?route=${screen}/${route}`;
+            if (secondaryRoute) {
+                normalURL += `?route=${secondaryRoute}`;
+            }
+
+            normalURL += `%2F${values}`;
+            return normalURL;
         }
 
         // Redirecionar o usuário

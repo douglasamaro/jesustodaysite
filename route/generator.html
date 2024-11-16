@@ -32,6 +32,12 @@
     <label for="route">Route:</label>
     <input type="text" id="route" placeholder="Ex: readerRoute" required />
 
+    <label for="secondaryRoute">Segunda Rota (opcional):</label>
+    <input type="text" id="secondaryRoute" placeholder="Ex: plans_feature_screen" />
+
+    <label for="hasSecondaryRoute">Adicionar segunda rota?</label>
+    <input type="checkbox" id="hasSecondaryRoute" name="hasSecondaryRoute"><br><br>
+
     <label for="params">Parâmetros (JSON):</label>
     <textarea id="params" placeholder='Ex: {"bookId":"123","chapterId":"4","verseId":"7"}'></textarea>
 
@@ -49,8 +55,8 @@
     }
 
     // Gera o link encriptado
-    function generateEncryptedLink(screen, route, params) {
-        const data = { screen, route, ...params };
+    function generateEncryptedLink(screen, route, secondaryRoute, hasSecondaryRoute, params) {
+        const data = { screen, route, secondaryRoute: hasSecondaryRoute ? secondaryRoute : '', ...params };
         const encryptedData = encodeBase64(data);
         return `https://jesustodayapp.com/route?data=${encryptedData}`;
     }
@@ -59,6 +65,8 @@
     document.getElementById('generateBtn').addEventListener('click', () => {
         const screen = document.getElementById('screen').value.trim();
         const route = document.getElementById('route').value.trim();
+        const secondaryRoute = document.getElementById('secondaryRoute').value.trim();
+        const hasSecondaryRoute = document.getElementById('hasSecondaryRoute').checked;
         const paramsText = document.getElementById('params').value.trim();
         let params;
 
@@ -71,7 +79,7 @@
         }
 
         // Gera o link e exibe
-        const encryptedLink = generateEncryptedLink(screen, route, params);
+        const encryptedLink = generateEncryptedLink(screen, route, secondaryRoute, hasSecondaryRoute, params);
         document.getElementById('result').value = encryptedLink;
     });
 
