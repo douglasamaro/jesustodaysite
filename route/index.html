@@ -31,7 +31,7 @@
         // Redirecionar o usuário
         function redirectToApp() {
             const path = window.location.pathname; // Pega o path completo
-            const encryptedData = path.split("/app/")[1]; // Captura a parte encriptada
+            const encryptedData = path.split("/route/")[1]; // Captura a parte encriptada
 
             if (!encryptedData) {
                 console.error("Nenhum dado encriptado encontrado.");
