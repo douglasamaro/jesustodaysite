@@ -15,11 +15,11 @@
 </form>
 
 <h2>URL Gerada:</h2>
-<input type="text" id="generatedUrl" readonly>
-<button id="copyButton">Copiar URL</button>
+<input type="text" id="generatedUrl" readonly style="width: 100%; margin-top: 10px;">
+<button id="copyButton" style="margin-top: 10px;">Copiar URL</button>
 
 <script>
-    // Função para gerar URL com dado encriptado
+    // Função para gerar a URL com dado encriptado
     document.getElementById('form').addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -29,7 +29,7 @@
         // Encriptar o dado
         const encryptedData = CryptoJS.AES.encrypt(data, 'secret-key').toString();
 
-        // Criar a URL
+        // Criar a URL com o dado encriptado
         const url = `https://jesustodayapp.com/route?data=${encryptedData}`;
 
         // Exibir a URL gerada no campo de texto
@@ -39,7 +39,12 @@
     // Função para copiar a URL para a área de transferência
     document.getElementById('copyButton').addEventListener('click', function() {
         const urlField = document.getElementById('generatedUrl');
+
+        // Seleciona o texto do campo de entrada
         urlField.select();
+        urlField.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+        // Copia o texto para a área de transferência
         document.execCommand('copy');
         alert('URL copiada para a área de transferência!');
     });
