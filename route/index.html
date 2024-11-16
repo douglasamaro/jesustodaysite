@@ -25,7 +25,7 @@
                 .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
                 .join('&');
 
-            return `https://www.jesustodayapp.com/app/home?route=${screen}/${route}${paramStr ? `%2F${paramStr}` : ''}`;
+            return `https://www.jesustodayapp.com/route/home?route=${screen}/${route}${paramStr ? `%2F${paramStr}` : ''}`;
         }
 
         // Redirecionar o usuário
