@@ -76,7 +76,7 @@
             que alimentam sua alma e fortalecem sua fé, tudo em um único lugar.</p>
 
         <div class="info__buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.amaro.jesustoday" class="baixar-agora">Baixe nosso app</a>
+            <a href="#" class="baixar-agora">Baixe nosso app</a>
             <a href="/sobre.html" class="conheca-missao">Nossa missão
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.22353 1L8.90588 1.09412M8.90588 1.09412L9 7.77647M8.90588 1.09412L1 9" stroke="#393E46"
@@ -97,7 +97,8 @@
 
 
         <h4>Nosso Objetivo</h4>
-        <p>Cresça na fé com milhares de cristãos ao redor do mundo. O <span class="name-color">Jesus Today</span> oferece
+        <p>Cresça na fé com milhares de cristãos ao redor do mundo. O <span class="name-color">Jesus Today</span>
+            oferece
             uma plataforma onde você pode compartilhar sua jornada espiritual, aprender com outros e encontrar apoio em
             uma comunidade que valoriza a fé e a comunhão.</p>
     </div>
@@ -160,7 +161,7 @@
     </div>
     <p class="desktop">Explore diversas versões da Bíblia, devocionais motivadores e planos de leitura <br>
         que alimentam sua alma e fortalecem sua fé, tudo em um único lugar.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.amaro.jesustoday" class="baixar-agora">Baixe nosso app</a>
+    <a href="#" class="baixar-agora">Baixe nosso app</a>
 </div>
 
 <div class="future">
@@ -176,7 +177,7 @@
                 promovendo o crescimento espiritual e a conexão <br class="desktop"> entre cristãos.</p>
 
             <div class="info__buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.amaro.jesustoday" class="baixar-agora">Baixe nosso app</a>
+                <a href="#" class="baixar-agora">Baixe nosso app</a>
                 <a href="/sobre.html" class="conheca-missao">Nossa missão
                     <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.22353 1L8.90588 1.09412M8.90588 1.09412L9 7.77647M8.90588 1.09412L1 9"
@@ -208,11 +209,11 @@
             diretamente no seu celular, de forma<br class="desktop"> totalmente gratuita. Nosso aplicativo foi
             desenvolvido para ser uma ferramenta<br class="desktop"> prática e acessível, permitindo que você mantenha
             Jesus no centro da sua vida<br class="desktop"> diária, onde quer que esteja.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.amaro.jesustoday" class="baixar-agora desktop">Baixe nosso app</a>
+        <a href="#" class="baixar-agora desktop">Baixe nosso app</a>
     </div>
 </div>
 <div class="download_button">
-    <a href="https://play.google.com/store/apps/details?id=com.amaro.jesustoday" class="baixar-agora mobile">Baixe nosso app</a>
+    <a href="#" class="baixar-agora mobile">Baixe nosso app</a>
 </div>
 <div class="testimonial container desktop">
     <h3>Qualidade comprovada</h3>
@@ -290,7 +291,7 @@
 
     <div class="testimonial-button">
         <p>Participe desta jornada e mantenha sua fé em movimento com o Jesus Today</p>
-        <a href="https://play.google.com/store/apps/details?id=com.amaro.jesustoday" class="baixar-agora">Baixe nosso app</a>
+        <a href="#" class="baixar-agora">Baixe nosso app</a>
     </div>
 
 </div>
@@ -382,7 +383,7 @@
         </div>
 
         <div class="testimonial-button">
-            <a href="https://play.google.com/store/apps/details?id=com.amaro.jesustoday" class="baixar-agora">Baixe nosso app</a>
+            <a href="#" class="baixar-agora">Baixe nosso app</a>
         </div>
     </div>
 </div>
@@ -476,6 +477,47 @@
             prevEl: ".swiper-button-prev",
         },
     });
+
+    function detectOS() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return 'iOS';
+        }
+
+        if (/Macintosh|MacIntel|MacPPC|Mac68K/.test(userAgent)) {
+            return 'macOS';
+        }
+
+        if (/android/i.test(userAgent)) {
+            return 'Android';
+        }
+
+        return 'Other';
+    }
+
+    function updateDownloadLinks() {
+        const os = detectOS();
+        const links = document.querySelectorAll('.baixar-agora');
+
+        const iosUrl = "https://apps.apple.com/us/app/jesus-today/id6739759027?platform=iphone";
+        const macOsUrl = "https://apps.apple.com/br/app/jesus-today/id6739759027?l=pt-BR";
+        const androidUrl = "https://play.google.com/store/apps/details?id=com.amaro.jesustoday";
+
+        links.forEach(link => {
+            if (os === 'iOS') {
+                link.href = iosUrl;
+            } else if (os === 'macOS') {
+                link.href = macOsUrl;
+            } else if (os === 'Android') {
+                link.href = androidUrl;
+            } else {
+                link.href = androidUrl;
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', updateDownloadLinks);
 </script>
 </body>
 </html>
