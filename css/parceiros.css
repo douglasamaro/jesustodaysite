@@ -29,6 +29,15 @@
     line-height: 30px;
 }
 
+.parceiros-header a {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.parceiros-header a svg{
+    margin-left: 20px;
+}
+
 .parceiros-cards{
     display: flex;
     flex-direction: column;
